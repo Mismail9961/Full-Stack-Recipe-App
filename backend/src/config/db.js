@@ -1,10 +1,14 @@
-import { drizzle } from "drizzle-orm/neon-http";
-import { neon } from "@neondatabase/serverless";
+import { drizzle } from "drizzle-orm/node-postgres";
+import pkg from "pg";
 import { ENV } from "./env.js";
 import * as schema from "../db/schema.js";
 
-// Initialize Neon client
-const sql = neon(ENV.DATABASE_URL);
+const { Pool } = pkg;
 
-// Initialize Drizzle with schema for type safety
-export const db = drizzle<typeof schema>(sql, { schema });
+// Create a PostgreSQL connection pool
+const pool = new Pool({
+  connectionString: ENV.DATABASE_URL,
+});
+
+// Initialize Drizzle with full CRUD support
+export const db = drizzle(pool, { schema });
