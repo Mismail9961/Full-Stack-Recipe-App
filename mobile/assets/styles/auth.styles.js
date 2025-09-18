@@ -1,7 +1,7 @@
 import { StyleSheet, Dimensions } from "react-native";
 import { COLORS } from "../../constants/colors";
 
-const { height } = Dimensions.get("window");
+const { height, width } = Dimensions.get("window");
 
 export const authStyles = StyleSheet.create({
   container: {
@@ -13,29 +13,23 @@ export const authStyles = StyleSheet.create({
   },
   scrollContent: {
     flexGrow: 1,
-    paddingHorizontal: 24,
+    paddingHorizontal: 20,
     paddingTop: 40,
   },
   imageContainer: {
-    height: height * 0.3,
-    marginBottom: 30,
+    height: height * 0.25,
     justifyContent: "center",
     alignItems: "center",
+    marginBottom: 20,
   },
   image: {
-    width: 320,
-    height: 320,
+    width: width * 0.6,
+    height: width * 0.6,
   },
   title: {
-    fontSize: 28,
+    fontSize: 26,
     fontWeight: "bold",
     color: COLORS.text,
-    textAlign: "center",
-    marginBottom: 40,
-  },
-  subtitle: {
-    fontSize: 16,
-    color: COLORS.textLight,
     textAlign: "center",
     marginBottom: 30,
   },
@@ -43,14 +37,14 @@ export const authStyles = StyleSheet.create({
     flex: 1,
   },
   inputContainer: {
-    marginBottom: 20,
+    marginBottom: 18,
     position: "relative",
   },
   textInput: {
     fontSize: 16,
     color: COLORS.text,
-    paddingVertical: 16,
-    paddingHorizontal: 20,
+    paddingVertical: 14,
+    paddingHorizontal: 18,
     backgroundColor: COLORS.background,
     borderRadius: 12,
     borderWidth: 1,
@@ -59,18 +53,18 @@ export const authStyles = StyleSheet.create({
   eyeButton: {
     position: "absolute",
     right: 16,
-    top: 16,
-    padding: 4,
+    top: "35%",
+    transform: [{ translateY: -10 }],
   },
   authButton: {
     backgroundColor: COLORS.primary,
-    paddingVertical: 18,
+    paddingVertical: 16,
     borderRadius: 12,
-    marginTop: 20,
-    marginBottom: 30,
+    marginTop: 10,
+    marginBottom: 20,
   },
   buttonDisabled: {
-    opacity: 0.7,
+    opacity: 0.6,
   },
   buttonText: {
     fontSize: 16,
@@ -80,10 +74,10 @@ export const authStyles = StyleSheet.create({
   },
   linkContainer: {
     alignItems: "center",
-    paddingBottom: 20,
+    marginBottom: 20,
   },
   linkText: {
-    fontSize: 16,
+    fontSize: 15,
     color: COLORS.textLight,
   },
   link: {
